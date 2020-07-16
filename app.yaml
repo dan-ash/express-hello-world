@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: express-hello-world
+  labels:
+    app: express-hello-world
+spec:
+  selector:
+    matchLabels:
+      app: express-hello-world
+  template:
+    metadata:
+      labels:
+        app: express-hello-world
+    spec:
+      containers:
+        - name: express-hello-world
+          image: danash001/express-hello-world
+          ports:
+            - containerPort: 3000
